@@ -9,6 +9,7 @@ const services = [
     description:
       "Ensure your website looks great on any device, with layouts that adapt to different screen sizes seamlessly.",
   },
+  
   // {
   //   id: 2,
   //   title: "UI/UX Design",
