@@ -4,12 +4,13 @@ import { IProject } from "./project.interface";
 
 
 const ProjectSchema = new Schema<IProject>({
-  projectName: { type: String, required: true },
+  title: { type: String, required: false }, 
+  content: { type: String, required: true },
+  category: { type: String, required: true },
+  image: { type: String, required: true },
   liveLink: { type: String, required: true },
-  projectImg: { type: String, required: true },
-  projectBanner: { type: String, required: false }, 
-  projectOverview: { type: String, required: true },
-  tools: { type: [String], required: true }, 
+  frontEndGitLink: { type: String, required: true },
+  backEndGitLink: { type: String, required: true },
 });
 
 

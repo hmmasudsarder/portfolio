@@ -17,7 +17,7 @@ const services = [
   },
   {
     id: 3,
-    title: "Content Writing",
+    title: "Debugging code in javascript fixed the bug",
     description:
       "Build and integrate APIs to connect websites with third-party applications, enhancing functionality and performance.",
   },

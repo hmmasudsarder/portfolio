@@ -1,10 +1,11 @@
 import { Document } from "mongoose";
 
 export interface IProject extends Document {
-  projectName: string;
+  title: string;
+  content: string;
+  category: string;
+  image: string;
   liveLink: string;
-  projectImg: string;
-  projectBanner?: string; 
-  projectOverview: string;
-  tools: string[]; // Added tools array
+  frontEndGitLink?: string; 
+  backEndGitLink: string;
 }

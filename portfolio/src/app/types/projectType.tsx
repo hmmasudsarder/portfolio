@@ -1,13 +1,13 @@
 export type TProject = {
   _id: string;
-  backEndGitLink: string;
-  category: string;
+  title: string;
   content: string;
-  createdAt: string;
-  frontEndGitLink: string;
+  category: string;
   image?: string;
   liveLink: string;
-  title: string;
+  frontEndGitLink: string;
+  backEndGitLink: string;
+  createdAt: string;
   updatedAt: string;
   __v: number;
 };

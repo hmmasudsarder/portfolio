@@ -36,6 +36,11 @@ const getAllBlogs = async (query: Record<string, unknown>) => {
   return result;
 };
 
+const getSingleBlog = async (id: string ) => {
+  const result = await BlogModel.findById(id)
+  return result;
+}
+
 // updated operation
 const updateBlogById = async (
   blogId: string,
@@ -103,6 +108,7 @@ const deleteBlogByAdmin = async (id: string) => {
 export const BlogServices = {
   createBlogIntoDb,
   getAllBlogs,
+  getSingleBlog,
   updateBlogById,
   deleteBlogById,
   deleteBlogByAdmin

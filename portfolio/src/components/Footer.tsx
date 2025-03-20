@@ -1,6 +1,7 @@
 import React from "react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-[#2a1454] text-white py-8">
       <div className="container mx-auto flex flex-col items-center">
@@ -10,7 +11,7 @@ const Footer = () => {
             className="block lg:text-2xl md:text-xl text-sm font-semibold  sm:text-5xl  my-4 md:my-6  text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 leading-tight"
             href="#"
           >
-            Pronoybanik82@gmail.com
+            M A S IT SOLUTIONS
           </a>
         </div>
 
@@ -52,9 +53,9 @@ const Footer = () => {
 
         {/* Copyright Section */}
         <div className="text-sm text-gray-300 text-center">
-          © 2024 All rights reserved by{" "}
+          © {currentYear} All rights reserved by{" "}
           <a href="#" className="hover:text-purple-400">
-            ThemeJunction
+            M A S IT SOLUTIONS
           </a>
         </div>
       </div>

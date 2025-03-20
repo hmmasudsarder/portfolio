@@ -46,7 +46,7 @@ const NavBar = () => {
                 className="block lg:text-2xl md:text-xl text-sm font-semibold  sm:text-5xl  my-4 md:my-6  text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 leading-tight"
                 href="#"
               >
-                Pronoybanik82@gmail.com
+                MAS
               </a>
             </div>
 

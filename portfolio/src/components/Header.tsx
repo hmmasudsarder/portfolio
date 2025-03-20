@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import image from "../images/1717947005422_magicstudio_a31w4iorxkt.png";
+import image from "../images/masud.jpg";
 import facebook from "../images/icons/icons8-facebook-250.png";
 import github from "../images/icons/icons8-github-500.png";
 import linkedin from "../images/icons/icons8-linkedin-250.png";
@@ -17,7 +17,7 @@ const Header = ({ id }: { id: string }) => {
       {/* Left Section (Text) */}
       <div className="text-center md:text-left md:w-1/2">
         <h2 className="text-3xl md:text-5xl font-bold text-black">
-          I am Pronoy
+          I am Masud
         </h2>
         <h1 className="text-4xl sm:text-5xl md:text-7xl my-4 md:my-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 leading-tight">
           Next-Level Web <br className="hidden sm:block" /> Developer.
@@ -43,17 +43,17 @@ const Header = ({ id }: { id: string }) => {
           <div className="flex gap-4">
             {[
               {
-                link: "https://www.facebook.com/pronoy.banik.7",
+                link: "https://x.com/hmmasudsardar",
                 img: facebook,
                 alt: "Facebook",
               },
               {
-                link: "https://github.com/pronoybanik",
+                link: "https://github.com/hmmasudsarder",
                 img: github,
                 alt: "GitHub",
               },
               {
-                link: "https://www.linkedin.com/in/pronoy-banik-1b5a3125a/",
+                link: "https://www.linkedin.com/in/hmmasudsarder/",
                 img: linkedin,
                 alt: "LinkedIn",
               },

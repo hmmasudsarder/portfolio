@@ -1,5 +1,4 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -19,7 +18,7 @@ const ProjectDetails = () => {
     const fetchProject = async () => {
       try {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/project/${params.id}`
+          `http://localhost:5000/api/projects/${params.id}`
         );
         const data = await res.json();
         setProject(data?.data || null);

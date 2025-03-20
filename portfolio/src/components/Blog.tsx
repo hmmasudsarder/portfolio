@@ -49,7 +49,7 @@ const Blog = ({ loadId }: { loadId: string }) => {
 
       <div className="max-w-screen-2xl mx-auto">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {blogs.map((blog) => (
+          {blogs?.map((blog) => (
             <Link
               href={`/blog/${blog._id}`}
               key={blog._id}

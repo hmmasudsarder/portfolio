@@ -1,17 +1,19 @@
-import Image from "next/image";
+import React from "react";
+import "./spinner.css";
 
-const LoadingPage = () => {
+const Loading = () => {
   return (
-    <div className="w-[90%] mx-auto">
-      <Image
-        src="https://i.stack.imgur.com/hzk6C.gif"
-        width={500}
-        height={500}
-        alt="loading"
-        className="w-96 mx-auto"
-      />
+    <div className="h-screen w-full flex justify-center items-center">
+      <div className="spinner">
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+        <div />
+      </div>
     </div>
   );
 };
 
-export default LoadingPage;
+export default Loading;

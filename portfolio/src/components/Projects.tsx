@@ -4,11 +4,11 @@ import Link from "next/link";
 import { TProject } from "@/app/types/projectType";
 
 const Projects = async ({ loadId }: { loadId: string }) => {
-  const res = await fetch(`https://nextjs-portfolio-backend-pink.vercel.app/api/project`, {
+  const res = await fetch(`http://localhost:5000/api/projects`, {
     cache: "no-cache",
   });
   const projects = await res.json();
-
+  console.log(projects)
   return (
     <section id={loadId} className="py-16 px-8  min-h-screen">
       <div className="text-center my-20">
