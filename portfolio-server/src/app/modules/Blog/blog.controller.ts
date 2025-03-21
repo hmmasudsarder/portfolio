@@ -5,14 +5,15 @@ import sendResponse from '../../utils/sendResponse';
 import httpStatus from 'http-status';
 
 const createBlog = catchAsync(async (req: Request, res: Response) => {
-  const { title, content } = req.body;
-  const userId = req.user?.userId; // from the JWT token set by auth middleware
-  // console.log(title, content);
-  // console.log('id asbe', userId);
+  const { title, content, category, image } = req.body;
+  const userId = req.user?.userId; // Extracted from JWT token by auth middleware
+
   const result = await BlogServices.createBlogIntoDb({
     title,
     content,
     author: userId,
+    category,
+    image,
   });
 
   sendResponse(res, {

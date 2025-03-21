@@ -4,7 +4,7 @@ interface Blog {
   _id: string;
   title: string;
   content: string;
-  author: string;
+  author: string | { name: string };
 }
 
 interface BlogTableProps {
@@ -14,6 +14,7 @@ interface BlogTableProps {
 }
 
 const BlogTable: React.FC<BlogTableProps> = ({ data, onDelete, onEdit }) => {
+  // console.log(data)
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white shadow-md rounded-lg">
@@ -27,12 +28,14 @@ const BlogTable: React.FC<BlogTableProps> = ({ data, onDelete, onEdit }) => {
         </thead>
         <tbody>
           {data?.length > 0 ? (
-            data?.map((blog) => (
+            data?.map((blog: Blog) => (
               <tr key={blog._id} className="border-b hover:bg-gray-100 text-center">
                 <td className="px-6 py-4">{blog?.title}</td>
                 <td className="px-6 py-4">{blog?.content && blog.content.slice(0, 50)}...</td>
                 <td className="px-6 py-4">
-                  {typeof blog?.author === "object" ? blog.author?.name : blog.author}
+                  {/* {typeof blog?.author === "object" ? blog?.author?.name : blog?.author} */}
+                  {typeof blog.author === "object" ? blog.author.name : blog.author}
+                  {/* console.log(blog) */}
                 </td>
                 <td className="flex gap-2 px-6 py-4 space-x-2">
                   <button onClick={() => onEdit(blog?._id)} className="bg-blue-500 text-white px-3 py-1 rounded">Edit</button>

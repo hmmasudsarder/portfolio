@@ -29,7 +29,7 @@ const Login = () => {
 
       if (!res.ok) throw new Error(data.message || "Login failed");
 
-      localStorage.setItem("token", data.token); // Save token
+      localStorage.setItem("token", data?.data?.token); // Save token
       alert("Login Successful!");
       router.push("/"); // Redirect after login
       setTimeout(() => {

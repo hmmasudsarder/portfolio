@@ -3,9 +3,10 @@
 import PrimaryButton from "@/shared/PrimaryButton";
 import SecondaryButton from "@/shared/SecondaryButton";
 import verifyToken from "@/utils/verifyToken";
+import { JwtPayload } from "jsonwebtoken";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { JwtPayload } from "jsonwebtoken"; 
+// import { JwtPayload } from "jsonwebtoken"; 
 
 // Extend JwtPayload to include 'role'
 interface CustomJwtPayload extends JwtPayload {
@@ -14,8 +15,9 @@ interface CustomJwtPayload extends JwtPayload {
 
 const NavBar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const token =
-    typeof window !== "undefined" ? localStorage.getItem("token") : null;
+  const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+  // const token =
+  //   typeof window !== "undefined" ? localStorage.getItem("token") : null;
 
   let tokenInfo: CustomJwtPayload | null = null; 
 
@@ -25,7 +27,7 @@ const NavBar = () => {
 
   // Check if a token exists in localStorage
   useEffect(() => {
-    setIsLoggedIn(!!token); // Set logged-in state
+    setIsLoggedIn(!!token && token.length > 0); // Check if token exists and isn't empty
   }, [token]);
 
   // Logout function

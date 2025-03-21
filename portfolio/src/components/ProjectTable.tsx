@@ -8,10 +8,12 @@ interface ProjectTableProps {
 }
 
 const ProjectTable: React.FC<ProjectTableProps> = ({
+  
   data,
   onEdit,
   onDelete,
 }) => {
+  if (typeof window !== 'undefined'){ }
   return (
     <div className="overflow-x-auto">
       <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">

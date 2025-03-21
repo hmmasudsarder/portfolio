@@ -13,10 +13,10 @@ interface TContact {
 }
 
 const Contact = () => {
+  if (typeof window !== 'undefined'){ }
   const [contact, setContact] = useState<TContact[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-  console.log(contact);
 
   useEffect(() => {
     fetchContacts();
@@ -24,11 +24,18 @@ const Contact = () => {
 
   // Fetch contacts from API
   const fetchContacts = async () => {
-    setLoading(true);
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`);
+      const token = localStorage.getItem("token"); // Retrieve token from localStorage or cookies
+      if (!token) throw new Error("No authentication token found");
+  
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/contact`, {
+        headers: {
+          Authorization: `${token}`, // Add the token to the Authorization header
+        },
+      });
+  
       if (!res.ok) throw new Error("Failed to fetch contacts");
-
+  
       const data = await res.json();
       setContact(data.data || []);
       setLoading(false);
@@ -44,17 +51,23 @@ const Contact = () => {
   // Handle delete request
   const handleDelete = async (id: string) => {
     if (!confirm("Are you sure you want to delete this inquiry?")) return;
-
+  
     try {
+      const token = localStorage.getItem("token"); // Retrieve the token
+      if (!token) throw new Error("No authentication token found");
+  
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/api/contact/${id}`,
         {
           method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+          },
         }
       );
-
+  
       if (!res.ok) throw new Error("Failed to delete inquiry");
-
+  
       setContact((prev) => prev.filter((item) => item._id !== id));
       alert("Inquiry deleted successfully!");
     } catch (error) {

@@ -14,6 +14,7 @@ interface TBlog {
 }
 
 const BlogItem = () => {
+  if (typeof window !== 'undefined'){ }
   const { id } = useParams();
   const [blog, setBlog] = useState<TBlog | null>(null);
   const [loading, setLoading] = useState(true);

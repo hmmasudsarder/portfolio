@@ -41,9 +41,9 @@ const getProjectById = catchAsync(async (req:Request, res:Response) => {
   
   const deleteBlogById = catchAsync(async (req: Request, res: Response) => {
     const blogId = req.params.id;
-    const userId = req.user?.userId;
+    // const userId = req.user?.userId;
   
-    const result = await ProjectServices.deleteBlogById(blogId, userId);
+    const result = await ProjectServices.deleteBlogById(blogId);
   
     sendResponse(res, {
       statusCode: httpStatus.OK,

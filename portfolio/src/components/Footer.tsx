@@ -1,7 +1,7 @@
 import React from "react";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  // const currentYear = new Date().getFullYear();
   return (
     <footer className="bg-[#2a1454] text-white py-8">
       <div className="container mx-auto flex flex-col items-center">
@@ -53,7 +53,7 @@ const Footer = () => {
 
         {/* Copyright Section */}
         <div className="text-sm text-gray-300 text-center">
-          © {currentYear} All rights reserved by{" "}
+          © All rights reserved by{" "}
           <a href="#" className="hover:text-purple-400">
             M A S IT SOLUTIONS
           </a>

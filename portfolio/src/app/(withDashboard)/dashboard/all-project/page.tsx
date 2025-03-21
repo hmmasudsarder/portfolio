@@ -10,7 +10,7 @@ const AllProjects: React.FC = () => {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/project`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/projects`);
         if (!res.ok) throw new Error("Failed to fetch projects");
 
         const data = await res.json();
@@ -29,22 +29,36 @@ const AllProjects: React.FC = () => {
   };
 
   const handleDelete = async (projectId: string) => {
+  
+    const token = localStorage.getItem("token"); // Retrieve token from localStorage or cookies
+    if (!token) {
+      alert("No authentication token found");
+      return;
+    }
+  
     if (!confirm("Are you sure you want to delete this project?")) return;
-
+  
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/project/${projectId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/projects/${projectId}`, {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+        },
       });
-
-      if (!res.ok) throw new Error("Failed to delete project");
-
+  
+      if (!res.ok) {
+        console.error("Failed to delete project:", await res.text());
+        throw new Error("Failed to delete project");
+      }
+  
       // Update state
       setProjects((prev) => prev.filter((p) => p._id !== projectId));
+      alert("Project deleted successfully!");
     } catch (error) {
       console.error("Error deleting project:", error);
+      alert("An error occurred while deleting the project.");
     }
   };
-
   return (
     <section>
       <div className="text-center my-10">

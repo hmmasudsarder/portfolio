@@ -31,10 +31,15 @@ const AllBlogs: React.FC = () => {
   }, []);
 
   const handleDelete = async (id: string) => {
+    const token = localStorage.getItem("token"); // Retrieve token from localStorage or cookies
+      if (!token) throw new Error("No authentication token found");
     if (!confirm("Are you sure you want to delete this blog?")) return;
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blogs/${id}`, {
       method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`, // Include the token in the Authorization header
+      },
     });
 
     if (res.ok) {

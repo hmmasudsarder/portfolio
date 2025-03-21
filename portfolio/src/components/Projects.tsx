@@ -8,7 +8,6 @@ const Projects = async ({ loadId }: { loadId: string }) => {
     cache: "no-cache",
   });
   const projects = await res.json();
-  console.log(projects)
   return (
     <section id={loadId} className="py-16 px-8  min-h-screen">
       <div className="text-center my-20">

@@ -6,8 +6,13 @@ const blogSchema: Schema = new Schema(
     title: { type: String, required: true },
     content: { type: String, required: true },
     author: { type: Schema.Types.ObjectId, ref: "User", required: true },
-    isPublished: { type: Boolean, default: true },
-  },
+    category: {
+        type: String,
+        enum: ['Technology', 'Health', 'Lifestyle', 'Business', "Portfolio"], // Example categories
+        default: 'Technology', // Provide a default value
+    },
+    image: String
+  }, 
   {
     timestamps: true,
   },

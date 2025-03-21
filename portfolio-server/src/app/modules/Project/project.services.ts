@@ -24,11 +24,10 @@ const getAllProject = async () => {
     return project; // Returns the project or null if not found
   };
 
-  const deleteBlogById = async (blogId: string, userId: string) => {
+  const deleteBlogById = async (blogId: string) => {
     // Find the blog and delete
     const result = await Project.findOneAndDelete({
       _id: blogId,
-      author: userId,
     });
   
     if (!result) {
