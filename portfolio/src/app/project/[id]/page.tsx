@@ -21,6 +21,7 @@ const ProjectDetails = () => {
           `${process?.env?.NEXT_PUBLIC_API_URL}/api/projects/${params.id}`
         );
         const data = await res.json();
+        console.log(data)
         setProject(data?.data || null);
       } catch (error) {
         console.error("Error fetching project details:", error);
@@ -80,16 +81,16 @@ const ProjectDetails = () => {
             <div className="flex justify-center gap-8 mt-4">
               {project.frontEndGitLink && (
                 <SecondaryButton>
-                  <a href={project.frontEndGitLink} target="_blank">
+                  <Link href={project.frontEndGitLink} target="_blank">
                     Frontend Code
-                  </a>
+                  </Link>
                 </SecondaryButton>
               )}
               {project.backEndGitLink && (
                 <SecondaryButton>
-                  <a href={project.backEndGitLink} target="_blank">
+                  <Link href={project.backEndGitLink} target="_blank">
                     Backend Code
-                  </a>
+                  </Link>
                 </SecondaryButton>
               )}
               {project.liveLink && (
