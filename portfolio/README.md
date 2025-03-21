@@ -1,5 +1,5 @@
-Frontend live link: https://next-js-portfolio-frontend-murex.vercel.app/
-Backend live link: https://nextjs-portfolio-backend-pink.vercel.app/
+Frontend live link: https://portfolio-gamma-ochre-32.vercel.app/
+Backend live link: https://portfolio-server-coral-iota.vercel.app
 
 That is portfolio project using next js
 

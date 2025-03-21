@@ -95,6 +95,6 @@ The server will run on the port specified in your .env file.
 ## 🖊️ **Credits**
 
 Developed with 👤 by:  
-**[Saiful Islam Shaikot](#)** 🎉
+**[Masud Sarder](#)** 🎉
 ---
 
