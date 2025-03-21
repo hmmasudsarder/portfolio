@@ -9,7 +9,7 @@ const ProductItem = ({ projectData }: { projectData: TProject }) => {
       href={`/project/${projectData._id}`}
       className="block mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8"
     >
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8 hover:shadow-lg p-2 rounded-lg">
         <div>
           <h2 className="text-2xl font-semibold text-gray-900 sm:text-3xl">
             {projectData.title}
@@ -22,7 +22,7 @@ const ProductItem = ({ projectData }: { projectData: TProject }) => {
             alt={projectData?.title || "Project Image"}
             width={500}
             height={300}
-            className="rounded"
+            className="rounded  h-1/5 w-fill"
           />
         </div>
       </div>
