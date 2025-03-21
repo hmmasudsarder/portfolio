@@ -18,7 +18,7 @@ const ProjectDetails = () => {
     const fetchProject = async () => {
       try {
         const res = await fetch(
-          `http://localhost:5000/api/projects/${params.id}`
+          `${process?.env?.NEXT_PUBLIC_API_URL}/api/projects/${params.id}`
         );
         const data = await res.json();
         setProject(data?.data || null);
