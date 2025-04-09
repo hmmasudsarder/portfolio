@@ -8,7 +8,6 @@ interface ProjectTableProps {
 }
 
 const ProjectTable: React.FC<ProjectTableProps> = ({
-  
   data,
   onEdit,
   onDelete,

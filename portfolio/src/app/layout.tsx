@@ -25,9 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body data-new-gr-c-s-check-loaded="14.1226.0"
-        data-gr-ext-installed=""
+      <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        data-new-gr-c-s-check-loaded="14.1228.0"
+        data-gr-ext-installed=""
       >
         <NavBar />
         <div className="min-h-screen">{children}</div>

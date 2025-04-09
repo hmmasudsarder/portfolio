@@ -21,7 +21,7 @@ const DashboardPage = () => {
   const [tokenInfo, setTokenInfo] = useState<CustomJwtPayload | null>(null);
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-
+console.log(tokenInfo)
 
   useEffect(() => {
     const fetchUser = async (userId: string) => {
@@ -61,7 +61,7 @@ const DashboardPage = () => {
   }, []);
 
   if (loading) return <h1 className="text-center text-2xl mt-10">Loading...</h1>;
-
+  console.log(user)
   return (
     <div>
       <h1 className="text-4xl text-center mt-10">Welcome to the dashboard</h1>

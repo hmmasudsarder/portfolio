@@ -34,7 +34,7 @@ const Header = ({ id }: { id: string }) => {
           <a
             href={resume}
             className="inline-flex  items-center justify-center px-5 py-3 text-base font-medium text-center text-black border border-indigo-500 rounded-lg shadow-sm cursor-pointer transition-colors duration-300 hover:bg-gradient-to-br from-purple-500 via-indigo-500 to-indigo-500 hover:text-white hover:border-indigo-600"
-            download="pronoy_banik_resume.pdf"
+            download="masud_sarder_resume.pdf"
           >
             Download CV
           </a>

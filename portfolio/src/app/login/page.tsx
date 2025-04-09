@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import SecondaryButton from "@/shared/SecondaryButton";
 
 const Login = () => {
+  if (typeof window !== 'undefined'){ }
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");

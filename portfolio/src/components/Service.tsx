@@ -9,12 +9,12 @@ const services = [
     description:
       "Ensure your website looks great on any device, with layouts that adapt to different screen sizes seamlessly.",
   },
-  {
-    id: 2,
-    title: "UI/UX Design",
-    description:
-      "Set up user-friendly CMS solutions like WordPress or custom-built options so clients can manage content easily.",
-  },
+  // {
+  //   id: 2,
+  //   title: "UI/UX Design",
+  //   description:
+  //     "Set up user-friendly CMS solutions like WordPress or custom-built options so clients can manage content easily.",
+  // },
   {
     id: 3,
     title: "Debugging code in javascript fixed the bug",
