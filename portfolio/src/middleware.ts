@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getCurrentUser } from "./services/AuthService";
 
+import { JwtPayload } from "jsonwebtoken";
+
+interface ExtendedJwtPayload extends JwtPayload {
+  role: keyof typeof roleBasedPrivateRoutes;
+}
+
 type Role = keyof typeof roleBasedPrivateRoutes;
 
 const authRoutes = ["/login", "/register"];
@@ -9,11 +15,9 @@ const roleBasedPrivateRoutes = {
   user: [/^\/user/],
   admin: [/^\/admin/],
 };
-
 export const middleware = async (request: NextRequest) => {
-  const { pathname } = request.nextUrl;
-
-  const userInfo = await getCurrentUser();
+  const userInfo = (await getCurrentUser()) as ExtendedJwtPayload | null;
+  const pathname = request.nextUrl.pathname;
 
   if (!userInfo) {
     if (authRoutes.includes(pathname)) {

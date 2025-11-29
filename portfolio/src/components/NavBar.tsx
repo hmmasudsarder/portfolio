@@ -141,7 +141,7 @@ const NavBar = () => {
               </nav>
 
               <div className="flex items-center gap-4">
-                <div className="sm:flex sm:gap-4">
+                {/* <div className="sm:flex sm:gap-4">
                   {isLoggedIn ? (
                     <PrimaryButton handler={handleLogout}>Logout</PrimaryButton>
                   ) : (
@@ -155,9 +155,9 @@ const NavBar = () => {
                       </Link>
                     </>
                   )}
-                </div>
+                </div> */}
 
-                <div className="block md:hidden">
+                {/* <div className="block md:hidden">
                   <button className="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -174,8 +174,8 @@ const NavBar = () => {
                       />
                     </svg>
                   </button>
-                </div>
-              </div>
+                </div> */}
+              </div> 
             </div>
           </div>
         </div>
