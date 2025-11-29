@@ -183,16 +183,16 @@ const ContactForm = ({ id }: { id: string }) => {
 
         {/* Contact Info Section */}
         <div className="flex flex-col items-center md:items-start space-y-6 w-full md:w-auto">
-          <ContactInfo icon={Phone} title="Phone" value="+01 123 654 8096" />
+          <ContactInfo icon={Phone} title="Phone" value="+01716621249" />
           <ContactInfo
             icon={Mail}
             title="Email"
-            value="gerolddesign@mail.com"
+            value="hmmasudsardar@mail.com"
           />
           <ContactInfo
             icon={MapPin}
             title="Address"
-            value="Warne Park Street Pine, FL 33157, New York"
+            value="Dhaka, Bangladesh"
           />
         </div>
       </div>

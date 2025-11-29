@@ -1,11 +1,11 @@
 "use client";
 
-import PrimaryButton from "@/shared/PrimaryButton";
-import SecondaryButton from "@/shared/SecondaryButton";
+// import PrimaryButton from "@/shared/PrimaryButton";
+// import SecondaryButton from "@/shared/SecondaryButton";
 import verifyToken from "@/utils/verifyToken";
 import { JwtPayload } from "jsonwebtoken";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 // import { JwtPayload } from "jsonwebtoken"; 
 
 // Extend JwtPayload to include 'role'
@@ -14,7 +14,7 @@ interface CustomJwtPayload extends JwtPayload {
 }
 
 const NavBar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
   // const token =
   //   typeof window !== "undefined" ? localStorage.getItem("token") : null;
@@ -26,17 +26,17 @@ const NavBar = () => {
   }
 
   // Check if a token exists in localStorage
-  useEffect(() => {
-    setIsLoggedIn(!!token && token.length > 0); // Check if token exists and isn't empty
-  }, [token]);
+  // useEffect(() => {
+  //   setIsLoggedIn(!!token && token.length > 0); // Check if token exists and isn't empty
+  // }, [token]);
 
   // Logout function
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    setIsLoggedIn(false); // Update state
-    // Redirect to the login page or home
-    window.location.href = "/login";
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem("token");
+  //   setIsLoggedIn(false); // Update state
+  //   // Redirect to the login page or home
+  //   window.location.href = "/login";
+  // };
 
   return (
     <div className="sticky top-0 z-50">
